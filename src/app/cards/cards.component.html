@@ -1,0 +1,27 @@
+<section class="users">
+    <div class="container">
+
+
+        <div class="cards">
+            @for (item of data; track $index) {
+            <div class="card">
+                <figure class="userimg"><img src="{{item.profilePicture}}" alt=""></figure>
+                <div class="text">
+                    @if (item.role=="admin") {
+                    <h2 class="admin">{{item.role}}</h2>
+                    }@else if (item.role=="moderate") {
+                    <h2 class="moderate">{{item.role}}</h2>
+                    }@else if (item.role=="user"){
+                    <h2 class="user">{{item.role}}</h2>
+                    }
+                    <p>{{item.username}}</p>
+                    <p>{{item.email}}</p>
+                    <p>{{item.phone}}</p>
+                    <p>{{item.birthdate}}</p>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+
+</section>
